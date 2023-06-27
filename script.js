@@ -1,35 +1,42 @@
-const rainBtn = document.querySelector('.rain')
-const snowBtn = document.querySelector('.snow')
-const heartBtn = document.querySelector('.heart')
-const ballonBtn = document.querySelector('.ballon')
-const body = document.querySelector('body')
-const flat = document.querySelector('.flat')
-heartBtn.addEventListener('click',()=>{
-   generateEmj('heart','heartDiv','❤️','white')
+const rainBtn = document.querySelector(".rain")
+const snowBtn = document.querySelector(".snow")
+const heartBtn = document.querySelector(".heart")
+const ballonBtn = document.querySelector(".ballon")
+const body = document.querySelector("body")
+const flat = document.querySelector(".flat")
+const openMenu = document.querySelector('.openMenu')
+const btns = document.querySelector('.btns')
+
+openMenu.addEventListener('click',()=>{
+  btns.classList.toggle('active')
+  openMenu.classList.toggle('active')
 })
 
-rainBtn.addEventListener('click',()=>{
- generateEmj('rain','rainDiv','💧','rgb(70, 92, 96)')
- flat.style.background = 'rgb(76, 188, 237)'
+heartBtn.addEventListener("click", () => {
+  generateEmj("heart", "heartDiv", "❤️", "white")
 })
 
-snowBtn.addEventListener('click',()=>{
-  generateEmj('snow','snowDiv','⁕','black')
+rainBtn.addEventListener("click", () => {
+  generateEmj("rain", "rainDiv", "💧", "rgb(70, 92, 96)")
+  flat.style.background = "rgb(76, 188, 237)"
 })
 
-ballonBtn.addEventListener('click',()=>{
-  generateEmj('ballon','ballonDiv','🎈','white')
+snowBtn.addEventListener("click", () => {
+  generateEmj("snow", "snowDiv", "⁕", "black")
 })
 
+ballonBtn.addEventListener("click", () => {
+  generateEmj("ballon", "ballonDiv", "🎈", "white")
+})
 
-function generateEmj(name,emjClass,emj,backgroundColor) {
+function generateEmj(name, emjClass, emj, backgroundColor) {
   body.style.background = backgroundColor
   setInterval(() => {
     let name = document.createElement("div")
     name.className = emjClass
     name.innerText = emj
     name.style.left = Math.random() * 100 + "vw"
-    name.style.fontSize = Math.random() * 30 + 'px'
+    name.style.fontSize = Math.random() * 30 + "px"
     body.append(name)
 
     setTimeout(() => {

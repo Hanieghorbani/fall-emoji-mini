@@ -15,10 +15,11 @@ body {
     justify-content: space-around;
     padding: 15px 0;
     background-color: rgb(55, 55, 55);
-    z-index: 10;
+    transition: all 0.1s linear;
 }
 
-.btns button {
+.btns button,
+.openMenu {
     padding: 7px 15px;
     border: none;
     background-color: gray;
@@ -26,6 +27,11 @@ body {
     border-radius: 7px;
     cursor: pointer;
     font-size: 18px;
+}
+
+.openMenu{
+    border-radius: 1px;
+    transition: all 0.1s linear;
 }
 
 .heartDiv,
@@ -55,12 +61,19 @@ body {
 .flat{
     width: 100%;
     height: 150px;
-    background-color: whitesmoke;
+    background-color: white;
     position: absolute;
     bottom: 10px;
 }
 
+.active{
+    transform: translateY(-65px);
+}
+
 @keyframes fall {
+    from{
+      transform: translateY(-100px)
+    }
     to {
         transform: translateY(105vh);
     }
